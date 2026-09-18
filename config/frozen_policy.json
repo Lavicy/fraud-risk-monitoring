@@ -1,0 +1,40 @@
+{
+  "model": "Logistic Regression (balanced)",
+  "threshold": 0.9117386299003929,
+  "model_selection": "Highest validation average precision; candidate order breaks ties",
+  "threshold_selection": "Maximum validation F1; precision then threshold breaks ties",
+  "train_end_step": 323,
+  "validation_end_step": 377,
+  "raw_features": [
+    "type",
+    "amount",
+    "oldbalanceOrg"
+  ],
+  "seed": 42,
+  "estimator_parameters": {
+    "C": 1.0,
+    "class_weight": "balanced",
+    "dual": false,
+    "fit_intercept": true,
+    "intercept_scaling": 1,
+    "l1_ratio": 0.0,
+    "max_iter": 1000,
+    "n_jobs": null,
+    "penalty": "deprecated",
+    "random_state": 42,
+    "solver": "lbfgs",
+    "tol": 0.0001,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "status": "Previously inspected historical test; fixed reproduction only",
+  "original_notebook_sha256": "45ebee1c966770081dcf5b6889a45ed32e6218f83953cd73f2d2d1edef3c3f8a",
+  "expected_test_counts": {
+    "TP": 3992,
+    "FP": 0,
+    "FN": 18,
+    "TN": 404067
+  },
+  "data_sha256": "16910f90577b0d981bf8ff289714510bb89bc71bff7d3f220f024e287e4eea6b",
+  "model_feature_set": "full"
+}
