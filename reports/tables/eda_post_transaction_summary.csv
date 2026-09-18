@@ -1,0 +1,5 @@
+,abs_origin_balance_error,abs_origin_balance_error,abs_origin_balance_error,abs_origin_balance_error,abs_origin_balance_error,abs_origin_balance_error,abs_origin_balance_error,abs_origin_balance_error,abs_dest_balance_error,abs_dest_balance_error,abs_dest_balance_error,abs_dest_balance_error,abs_dest_balance_error,abs_dest_balance_error,abs_dest_balance_error,abs_dest_balance_error
+,count,mean,std,min,25%,50%,75%,max,count,mean,std,min,25%,50%,75%,max
+fraud_status,,,,,,,,,,,,,,,,
+Fraud,8213.0,10692.325264824069,265146.131129604,0.0,0.0,0.0,0.0,10000000.0,8213.0,745138.5856374041,1862744.9230418077,0.0,0.0,9511.69,452294.74,10000000.0
+Legitimate,2762196.0,286803.5100229021,876375.1921333809,0.0,52613.43000000001,144200.825,280466.255,92445516.64,2762196.0,44302.66083195766,583231.3581553655,0.0,0.0,0.0,0.009999999776482582,75885725.63000001

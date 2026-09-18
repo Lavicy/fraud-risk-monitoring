@@ -1,0 +1,4 @@
+window,first_step,last_step,transactions,fraud_count,fraud_prevalence
+Original train,1,323,1951895,3643,0.001866391378634609
+Original validation,324,377,410437,560,0.0013643994084353993
+Previously inspected historical test,378,743,408077,4010,0.009826576847016617
