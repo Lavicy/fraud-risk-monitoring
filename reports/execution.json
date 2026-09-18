@@ -1,0 +1,27 @@
+{
+  "python": "3.12.14",
+  "notebooks": [
+    {
+      "file": "01_exploratory_analysis.ipynb",
+      "code_cells": 7,
+      "seconds": 30.45,
+      "sha256": "81f3d06257e6cbf62961ec6e4144c737286dc7e265c45de40278c7b9ed7f7402",
+      "status": "passed"
+    },
+    {
+      "file": "02_fraud_model.ipynb",
+      "code_cells": 8,
+      "seconds": 88.88,
+      "sha256": "19555e712202344504b07addc31a67e0c9defa0f17319a452b799a029c88b345",
+      "status": "passed"
+    },
+    {
+      "file": "03_risk_monitoring.ipynb",
+      "code_cells": 7,
+      "seconds": 8.59,
+      "sha256": "22acce3e16cc061227da84b749e1da89c1e4adacd6f884d74988731c6f19d9a1",
+      "status": "passed"
+    }
+  ],
+  "all_completed": true
+}

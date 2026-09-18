@@ -1,0 +1,12 @@
+{
+  "all_transactions": 6362620,
+  "all_fraud": 8213,
+  "eligible_transactions": 2770409,
+  "eligible_fraud": 8213,
+  "eligible_fraud_prevalence": 0.002964544224336551,
+  "last_legitimate_step": 718,
+  "late_rows": 296,
+  "late_fraud": 296,
+  "missing_cells": 0,
+  "potential_duplicate_row_hashes": 0
+}
