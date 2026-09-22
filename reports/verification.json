@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "core_tests": 4,
+  "notebooks": 3,
+  "checks": [
+    "Clean-kernel execution and saved outputs",
+    "Pinned installed versions",
+    "Original non-overlapping development boundaries",
+    "Two permitted model features",
+    "Validation-only predictions and consistent threshold/metrics",
+    "Monitoring totals",
+    "Local documentation links",
+    "Data and backup exclusions"
+  ],
+  "independent_new_test": false,
+  "fresh_environment_install_tested": false
+}

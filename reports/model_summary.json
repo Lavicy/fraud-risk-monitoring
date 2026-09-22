@@ -1,0 +1,26 @@
+{
+  "model": "Small decision tree",
+  "threshold": 0.99,
+  "features": [
+    "log_amount",
+    "is_transfer"
+  ],
+  "train_end": 323,
+  "validation_end": 377,
+  "status": "Development only; selected and assessed on the same validation period",
+  "validation": {
+    "transactions": 410437,
+    "fraud": 560,
+    "alerts": 412,
+    "fraud_rate": 0.0013643994084353993,
+    "alert_rate": 0.0010038081362060438,
+    "precision": 0.24514563106796117,
+    "recall": 0.18035714285714285,
+    "F1": 0.20781893004115226,
+    "AP": 0.04863723122450187,
+    "TP": 101,
+    "FP": 311,
+    "FN": 459,
+    "TN": 409566
+  }
+}
