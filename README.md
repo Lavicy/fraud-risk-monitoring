@@ -73,13 +73,3 @@ On Windows, activate `.venv\Scripts\activate` instead. You can also open the not
 The CSV and transaction-level predictions stay local and are ignored by Git. Aggregate tables and figures are saved in `reports/`. The scripts provide fresh-kernel execution and a few checks for feature timing, metric arithmetic and consistent outputs. A new package installation on a different operating system has not been verified.
 
 All three simplified notebooks were executed in order from fresh kernels on the full CSV. Four core tests, the output/link checks and `pip check` passed in the existing Python 3.12.14 environment. Execution took about 33 seconds on this machine; this is not a runtime guarantee. See [execution records](reports/execution.json) and [verification results](reports/verification.json).
-
-## Limitations and next steps
-
-This is one synthetic simulation, with only two model inputs, no independent new test data and no label-confirmation dates. The scores are not calibrated probabilities. Monitoring covers only 54 validation steps and its results were already used during selection.
-
-The next steps are to evaluate on genuinely new data, investigate trustworthy additional inputs and compare thresholds against a stated review capacity. The previous version remains in Git history, with its evaluation limitations recorded above.
-
-## Study notes
-
-The [bilingual learning guide](docs/LEARNING_GUIDE.md) explains the regression equations, decision trees, metric calculations and actuarial connections from first principles. It includes worked examples and exercises, in English with Chinese explanations of key ideas.
