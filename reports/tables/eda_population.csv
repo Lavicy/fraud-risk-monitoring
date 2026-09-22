@@ -1,3 +1,0 @@
-population,transactions,fraud_count,fraud_pct,legitimate_per_fraud
-All transactions,6362620,8213,0.12908204481801522,773.7010836478753
-TRANSFER and CASH_OUT,2770409,8213,0.2964544224336551,336.3199805186899

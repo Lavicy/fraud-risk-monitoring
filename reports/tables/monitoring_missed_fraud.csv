@@ -1,3 +1,0 @@
-type,missed_transactions,first_step,last_step,median_amount_dataset_currency_units,total_transaction_value_dataset_currency_units,lowest_score,highest_score
-CASH_OUT,13,387,741,0.0,0.0,0.29956768714451226,0.29956768714451226
-TRANSFER,5,456,714,10000000.0,40399045.08,0.538541362210176,0.9111338312028844

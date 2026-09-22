@@ -1,5 +1,0 @@
-period,first_step,last_step,elapsed_steps,transactions,fraud_count,legitimate_count,fraud_prevalence,fraud_per_elapsed_step,legitimate_per_elapsed_step
-Validation,324,377,54,410437,560,409877,0.0013643994084353993,10.37037037037037,7590.314814814815
-Historical test: complete,378,743,366,408077,4010,404067,0.009826576847016617,10.956284153005464,1104.0081967213114
-Historical test: through last legitimate step,378,718,341,407781,3714,404067,0.009107829938128554,10.89149560117302,1184.9472140762464
-Historical test: later tail,719,743,25,296,296,0,1.0,11.84,0.0
