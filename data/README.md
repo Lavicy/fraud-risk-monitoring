@@ -16,6 +16,6 @@ The inspected local CSV contains 6,362,620 rows. Its SHA-256 is:
 16910f90577b0d981bf8ff289714510bb89bc71bff7d3f220f024e287e4eea6b
 ```
 
-The fingerprint identifies the file analysed; it does not establish its original download history or independently authenticate the contents. Notebook 01 records the schema, size and quality checks in `reports/data_manifest.json`. Notebook 02 refuses to silently reproduce the fixed experiment on a different file.
+The fingerprint identifies the file analysed; it does not establish its original download history or independently authenticate the contents. The simplified Notebook 01 checks the five columns it reads and saves `reports/tables/data_quality.csv`. The main model uses only amount and type. The previous balance-dependent model is documented separately in `docs/PREVIOUS_VERSION.md`.
 
 The existing CSV is preserved locally. `.gitignore` excludes raw files in this directory; only this note is intended for version control. No download credentials are needed by the notebooks once the file is present.
