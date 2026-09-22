@@ -13,4 +13,5 @@ __pycache__/
 .DS_Store
 .env
 .env.*
+.local_history/
 # Keep executed notebooks, aggregate tables and figures for review.
