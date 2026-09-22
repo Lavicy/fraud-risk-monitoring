@@ -1,0 +1,3 @@
+model,validation_AP
+Logistic regression,0.003317280514895919
+Small decision tree,0.04863723122450187

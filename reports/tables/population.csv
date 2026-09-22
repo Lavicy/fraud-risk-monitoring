@@ -1,0 +1,3 @@
+population,transactions,fraud,fraud_percent
+All transactions,6362620,8213,0.12908204481801522
+TRANSFER / CASH_OUT,2770409,8213,0.2964544224336551
