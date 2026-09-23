@@ -1,18 +1,18 @@
 # PaySim fraud risk analysis
 
-An undergraduate actuarial project exploring a practical question: **can transaction amount and type help prioritise fraud reviews before a payment is completed?** It combines exploratory analysis, two simple classification models and a historical replay of the resulting alerts in Python.
+A Python analysis of synthetic payment fraud: **can transaction amount and type help prioritise fraud reviews before a payment is completed?** It combines exploratory analysis, logistic regression and a depth-limited decision tree and a historical replay of the resulting alerts in Python.
 
 The main finding is a trade-off: the selected decision tree flagged **412 transactions**, of which **101 were labelled fraud**, but missed **459 other fraud transactions** in the validation period. This makes review workload and missed cases central to the analysis.
 
 The dataset contains **6,362,620 synthetic transactions**, including **2,770,409 TRANSFER/CASH_OUT transactions**. It comes from [PaySim on Kaggle](https://www.kaggle.com/datasets/ealaxi/paysim1/data). These are simulated mobile-money records, not a bank's customer data. Amounts are in dataset currency units, not GBP. See [data/README.md](data/README.md) for download and placement instructions.
 
-## What is in the project?
+## Project structure
 
 | Notebook | Analysis |
 |---|---|
 | [01 · Exploratory analysis](01_exploratory_analysis.ipynb) | Missing values, fraud proportions by type, skewed amounts and time summaries. |
-| [02 · Simple modelling](02_fraud_model.ipynb) | Logistic regression versus a small decision tree, precision/recall and threshold choice. |
-| [03 · Basic monitoring](03_risk_monitoring.ipynb) | Transaction counts, alerts, review workload and retrospective label-based results. |
+| [02 · Fraud modelling](02_fraud_model.ipynb) | Logistic regression versus a small decision tree, precision/recall and threshold choice. |
+| [03 · Historical monitoring](03_risk_monitoring.ipynb) | Transaction counts, alerts, review workload and retrospective label-based results. |
 
 The notebooks contain the analysis and saved outputs. [analysis_helpers.py](analysis_helpers.py) shares the feature and metric calculations; `scripts/` runs and checks the notebooks. Aggregate results are in `reports/`.
 
@@ -22,7 +22,7 @@ Fraud is **0.1291% of all transactions** and **0.2965% within TRANSFER/CASH_OUT*
 
 ![Fraud rate by transaction type](reports/figures/fraud_by_type.png)
 
-The model uses only requested amount and type. Balances are excluded because the publisher warns that the simulation's cancellation behaviour affects them. An earlier balance-dependent model had nearly perfect scores; a saved comparison shows logistic-regression validation AP dropping from **1.0000 to 0.0033** when balance information is removed. This is a reason to question the features, not a claim of real-bank performance. The original results and their history are described in [the previous-version note](docs/PREVIOUS_VERSION.md).
+The model uses only requested amount and type. Balances are excluded because the publisher warns that the simulation's cancellation behaviour affects them. An earlier balance-dependent model had nearly perfect scores; a saved comparison shows logistic-regression validation AP dropping from **1.0000 to 0.0033** when balance information is removed. This is a reason to question the features, not a claim of real-bank performance. The specification and results remain in the [original analysis](https://github.com/Lavicy/fraud-risk-monitoring/tree/c4519cb66e21e7f3aa88f990cfd301e423b0a276); the balance comparison is retained in [reports/reference/previous_balance_check.csv](reports/reference/previous_balance_check.csv).
 
 ## How the model is evaluated
 
@@ -45,17 +45,15 @@ The tree was selected by AP. Thresholds 0.90, 0.95 and 0.99 produced the same al
 
 ![Validation threshold trade-off](reports/figures/threshold_tradeoff.png)
 
-## Why this relates to actuarial study
+## Review workload and risk interpretation
 
-Precision and recall are different conditional proportions: the fraud share of alerts versus the detected share of fraud. Fraud frequency and financial severity are also different: a transaction amount is not a confirmed net loss.
-
-The selected threshold creates about **10 reviews per 10,000 transactions**. Roughly three quarters of the alerts are false positives, which could use reviewer time and delay legitimate payments. It also misses about 82% of labelled fraud. A missed transaction may create exposure, but this dataset does not measure recoveries, liability or net losses. A threshold chosen for F1 is therefore a statistical exercise, rather than an established banking decision rule.
+The selected threshold creates about **10 reviews per 10,000 transactions**. Roughly three quarters of the alerts are false positives, which could use reviewer time and delay legitimate payments. It also misses about 82% of labelled fraud. A missed transaction may create exposure, but this dataset does not measure recoveries, liability or net losses. The F1 threshold has not been validated against review capacity or financial costs.
 
 Notebook 03 reuses the selected model's **validation-period** predictions. It plots counts and rates with the threshold fixed. Volumes and alerts are available at scoring; precision and recall require confirmed labels. It is a short historical replay, not a live monitoring system or independent stability test.
 
-![Simple monitoring overview](reports/figures/monitoring_overview.png)
+![Historical monitoring overview](reports/figures/monitoring_overview.png)
 
-## Run it
+## Reproduction
 
 Use Python 3.12. The pinned package versions are in [requirements.txt](requirements.txt).
 
@@ -72,4 +70,4 @@ On Windows, activate `.venv\Scripts\activate` instead. You can also open the not
 
 The CSV and transaction-level predictions stay local and are ignored by Git. Aggregate tables and figures are saved in `reports/`. The scripts provide fresh-kernel execution and a few checks for feature timing, metric arithmetic and consistent outputs. A new package installation on a different operating system has not been verified.
 
-All three simplified notebooks were executed in order from fresh kernels on the full CSV. Four core tests, the output/link checks and `pip check` passed in the existing Python 3.12.14 environment. Execution took about 33 seconds on this machine; this is not a runtime guarantee. See [execution records](reports/execution.json) and [verification results](reports/verification.json).
+All three notebooks were executed in order from fresh kernels on the full CSV. Four core tests, the output/link checks and `pip check` passed in the existing Python 3.12.14 environment. See [execution records](reports/execution.json) and [verification results](reports/verification.json).
