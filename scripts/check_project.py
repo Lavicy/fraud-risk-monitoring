@@ -1,4 +1,4 @@
-"""Check the executed learning notebooks and their saved results."""
+"""Check the executed analysis notebooks and their saved results."""
 from pathlib import Path
 import hashlib
 import importlib.metadata
@@ -37,7 +37,7 @@ def main():
     assert windows.last_step.tolist() == [323, 377]
     policy = json.loads((ROOT / 'reports/model_summary.json').read_text())
     assert policy['features'] == ['log_amount', 'is_transfer']
-    predictions = pd.read_csv(ROOT / 'artifacts/learning_validation_predictions.csv.gz', float_precision='round_trip')
+    predictions = pd.read_csv(ROOT / 'artifacts/validation_predictions.csv.gz', float_precision='round_trip')
     assert predictions.source_row.is_unique and predictions.step.between(324, 377).all()
     assert np.array_equal(predictions.alert, predictions.score.ge(policy['threshold']))
     result = evaluate(predictions.isFraud, predictions.score, policy['threshold'])
@@ -58,7 +58,7 @@ def main():
             if not destination.startswith(('https://', 'http://', '#')):
                 assert (document.parent / destination.split('#')[0]).exists(), destination
     for path in ['data/PS_20174392719_1491204439457_log.csv',
-                 'artifacts/learning_validation_predictions.csv.gz', '.local_history/advanced-2026-09-18/README.md']:
+                 'artifacts/validation_predictions.csv.gz', '.local_history/advanced-2026-09-18/README.md']:
         assert subprocess.run(['git', 'check-ignore', '--quiet', path], cwd=ROOT).returncode == 0
     report = {'status': 'passed', 'core_tests': 4, 'notebooks': 3,
               'checks': ['Clean-kernel execution and saved outputs', 'Pinned installed versions',
