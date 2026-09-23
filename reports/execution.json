@@ -4,22 +4,22 @@
     {
       "file": "01_exploratory_analysis.ipynb",
       "code_cells": 5,
-      "seconds": 18.22,
-      "sha256": "d19c27650157c96c46b8267f6c7e5f2f775c03d61a2435a29d14e37da45ad75b",
+      "seconds": 18.07,
+      "sha256": "6c5ada103b8c0e294ccc0c57b5f9f935284465817e22f017374b130a1a656103",
       "status": "passed"
     },
     {
       "file": "02_fraud_model.ipynb",
       "code_cells": 9,
-      "seconds": 10.8,
-      "sha256": "0c6402a2ab5d021d3b405151de6b1881018ef0222be32e49897eca32cfadba12",
+      "seconds": 10.46,
+      "sha256": "d32a4ed7186398242b4f650bd445e9eb3d6dbb0a23f1f2f77de146376233cfe9",
       "status": "passed"
     },
     {
       "file": "03_risk_monitoring.ipynb",
       "code_cells": 5,
-      "seconds": 3.46,
-      "sha256": "c42b44f607fdbea305d3abda4667522618c058be8b395b4885055b459dbd3653",
+      "seconds": 4.29,
+      "sha256": "ad2c4e56eb9e48c6a500a322884adb2b8013ac8e831911fabda80679a234c0f9",
       "status": "passed"
     }
   ],
